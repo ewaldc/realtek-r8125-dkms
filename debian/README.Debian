@@ -1,0 +1,5 @@
+realtek-r8125-dkms for Debian
+
+This installs a DKMS for Realtek r8125 drivers.
+
+ -- Deokgyu Yang <secugyu@gmail.com>  Fri, 12 Jun 2020 12:27:29 +0900
