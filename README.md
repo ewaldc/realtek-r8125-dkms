@@ -1,8 +1,9 @@
 # Realtek r8125 DKMS
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/awesometic/realtek-r8125-dkms?sort=semver&style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/RELEASE-V9.013.02-blue)
 
-This provides the Realtek r8125 driver in a DKMS way so that you can keep the latest driver even after a kernel upgrade.
+This repository provides a comprehensive rewrite of the official Realtek r8125 driver with the following objectives:
+
 The official Realtek 8125 driver has been rewritten with the following objections:
 - Implement data corruption fixes, some borrowed from the upstream mainstream r8169 driver (6.8+).
 - Improve performance: achieve 2.5Gb speeds in upload and download for both single and parallel transfers using multiple receive and transmit queues. It requires an MTU larger than 1500 bytes to achieve the full 2.5Gb. With the default MTU, speeds of around 2.3Gb can be obtained.
@@ -10,18 +11,16 @@ The official Realtek 8125 driver has been rewritten with the following objection
 - Reduce code size (depending on the options up to 50%)
 - Simplify the code by removing support for pre 4.x Linux kernels as well as unknown r8125 chipsets: the driver will now exit when unknown variants of the Realtek 8125A, 8125B, 8125D and 8125BP are discovered.
 - Differentiate from the mainline r8169 based drive through RSS/PTP support, higher performance at reduced system load.
+- Follow the official Realtek verions numbers
+- Leverage the excellent DKMS work from [awesometic](https://github.com/awesometic/realtek-r8125-dkms/)
 
-** NOTE: **
+**NOTE:**
 This driver is provided as-is, support will be on voluntary basis ("best-effort") via GitHub "issues".  The rewrite effort was started because the existing r8125 failed stress testing (data corruptions) while the mainline driver lacked features and performance to support a clustered file server.
 Testing was done solely on a cluster of 8-core arm64 systems running dual Realtek 8125B NICS on 10G ethernet switches, Ubuntu 24.04 (Noble) and 6.1+ kernels,
 
 ## Before use
 
 This DKMS package is for Realtek RTL8125 (r8125 in module name) Ethernet, which is designed for the PCI interface.
-
-If you are searching for the Realtek 2.5 Gbits **USB Ethernet**, which may use RTL8156 (r8152 in module name), you are in the wrong place. Please refer to another DKMS project for that Realtek driver.
-
-- [Realtek R8152 DKMS](https://github.com/awesometic/realtek-r8152-dkms)
 
 ## Installation
 
