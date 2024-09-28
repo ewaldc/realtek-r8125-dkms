@@ -54,20 +54,6 @@ If dependency error occurs, try to fix that with `apt` command.
 sudo apt install --fix-broken
 ```
 
-#### Launchpad PPA (Recommended)
-
-Add the Launchpad PPA.
-
-```bash
-sudo add-apt-repository ppa:awesometic/ppa
-```
-
-Then install the package using `apt` tool.
-
-```bash
-sudo apt install realtek-r8125-dkms
-```
-
 ### autorun.sh
 
 Using the `autorun.sh` script that Realtek provides on their original driver package. This is **not installed as a DKMS**, only efforts to the current kernel.
