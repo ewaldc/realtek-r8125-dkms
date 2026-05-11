@@ -22,6 +22,7 @@ Testing was done solely on a cluster of RK3588 8-core arm64 systems (Orange PI 5
 
 ## Kernel versions
 In principle, all kernel versions between 4.0 and 6.12 should work. The last version that was effectively stress tested was 6.12.8.
+Versions above 6.15 will definately NOT work, due to changes in the IOMMU. A new version is in developement and being tested on 6.18.x.
 
 ## Known Issues
 - PTP is enabled but testing has not succeeded. Some extra logging has been added and a few kernel hangs eliminated. It seems 8125B chips can't timestamp TX packets that have the minor version set to a non-zero value. Compiling linuxptp 4.4 (instead of versions with Ubuntu Noble (4.0) or Debian 12 (3.1.1)) and setting ptp_minor_version to 0 provides some progress...
