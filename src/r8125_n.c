@@ -11822,6 +11822,7 @@ rtl8125_set_rx_mode(struct net_device *dev)
                 netdev_for_each_mc_addr(ha, dev) {
                         u32 bit_nr = eth_hw_addr_crc(ha) >> 26;
                         mc_filter[bit_nr >> 5] |= 1 << (bit_nr & 31);
+                        rx_mode |= AcceptMulticast;
                 }
         }
 
